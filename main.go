@@ -1,22 +1,11 @@
+/*
+Copyright © 2024 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import (
-	"github.com/gofiber/fiber/v2"
-)
+import "github.com/Johnman67112/backend-dex/cmd"
 
 func main() {
-	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
-
-	app.Get("/api/v1/users", func(c *fiber.Ctx) error {
-		return c.JSON([]fiber.Map{
-			{"id": 1, "name": "John Doe"},
-			{"id": 2, "name": "Jane Doe"},
-		})
-	})
-
-	app.Listen(":3000")
+	cmd.Execute()
 }
